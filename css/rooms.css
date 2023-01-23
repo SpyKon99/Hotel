@@ -1,0 +1,21 @@
+.rooms .container .row {
+    display:contents;
+}
+
+.card-body {
+    display:flex;
+}
+
+#room-name {
+    color:#0047b3;
+}
+
+.room-info .btn-book {
+    background-color: #ff9900; 
+    width: 200px;
+    height: 40px
+}
+
+.card {
+    height: 420px;
+}

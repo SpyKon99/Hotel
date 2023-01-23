@@ -1,0 +1,23 @@
+
+/* search area */
+#searchTag {
+    font-family: fantasy;
+    text-decoration: none; 
+    color:#ff9900;
+}
+#searchTag a {
+    text-decoration: none; 
+    color:#ff9900;
+}
+#searchSection  {
+    width:50%; 
+    margin-left: 25%;
+}
+#searchSection button {
+    background-color: #ff9900;
+}
+
+/* card container */
+.container .row .col-sm .card {
+    height: 500px;
+}
