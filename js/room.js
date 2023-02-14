@@ -11,10 +11,18 @@ function book(id,user, price){
     let totalprice = pricePerStay * numberofstays;
     
     if(numberofstays<=0){
-      alert("΄Παρακαλω επιλεξτε σωστες ημερομηνιες");
+      alert("Παρακαλω επιλεξτε σωστες ημερομηνιες");
     } else if(checkin == "" || checkout=="" || numberofguests==null){
         alert("Παρακαλω επιλεξτε ημερομηνιες ή αριθμο ατομων!");
     } else {
+        // alert(userid);
+        // alert(roomid);
+        // alert(checkin);
+        // alert(checkout);
+        // alert(numberofguests);
+        // alert(numberofstays);
+        // alert(totalprice);
+
         $.post(
             "http://localhost/Unipihotel/api/bookings/book.php",
             {

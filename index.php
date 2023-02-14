@@ -56,7 +56,7 @@
 				<div class="col-sm">
 					<div class="card bg-info text-white">
 						<div class="card-body">
-							<h5 class="card-title"><a class="text-white" href="teck.php">Εγγύηση Χαμηλότερης Τιμής</a></h5>
+							<h5 class="card-title"><a class="text-white">Εγγύηση Χαμηλότερης Τιμής</a></h5>
 							<p class="card-text">Εγγυόμαστε πως στην UniPiHotel όλες οι καταχωρίσεις προσφέρονται στην χαμηλότερη τιμή της αγοράς.</p>
 							<br/>
 						</div>

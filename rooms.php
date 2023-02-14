@@ -12,7 +12,6 @@
       echo '<div id="result"></div>';
     ?>      
 <script>
-  // alert(text);
   $.get(
         "http://localhost/Unipihotel/api/rooms/allRooms.php",
         {
