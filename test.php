@@ -8,7 +8,7 @@ $dbname = "unipihotel";
 $conn = new mysqli($servername, $username, $password, $dbname);
 //  Check connection
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+  die("Connection failed: " . $conn->connect_error);
 }
 
 
@@ -19,8 +19,8 @@ $ssql = "SELECT * FROM rooms WHERE id= $roomid";
 $rresult = $conn->query($ssql);
 
 if ($result->num_rows > 0) {
-  while($room = $result->fetch_assoc()) {
-    echo'<div class="container" id="cart">
+  while ($room = $result->fetch_assoc()) {
+    echo '<div class="container" id="cart">
       <div class="py-5 text-center">
           <h2>Φορμα πληρωμης</h2>
       </div>
@@ -28,32 +28,32 @@ if ($result->num_rows > 0) {
         <div class="col-md-4 order-md-2 mb-4">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-muted">Το καλαθι σας</span>
-            <span class="badge badge-secondary badge-pill">'.$room['numberofstays'].'</span>
+            <span class="badge badge-secondary badge-pill">' . $room['numberofstays'] . '</span>
           </h4>
           <ul class="list-group mb-3 sticky-top">';
-          if ($rresult->num_rows > 0) {
-            while($rroom = $rresult->fetch_assoc()) {
-              echo '<li class="list-group-item d-flex justify-content-between lh-condensed">
+    if ($rresult->num_rows > 0) {
+      while ($rroom = $rresult->fetch_assoc()) {
+        echo '<li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
                 <h6 class="my-0">Ονομα δωματιου</h6>
-                <small class="text-muted">'.$rroom['roomName'].'</small>
+                <small class="text-muted">' . $rroom['roomName'] . '</small>
               </div>
-              <span class="text-muted">'.$rroom['price'].'€</span>
+              <span class="text-muted">' . $rroom['price'] . '€</span>
             </li>';
-            }
-          }  
-            
+      }
+    }
 
-            echo'<li class="list-group-item d-flex justify-content-between lh-condensed">
+
+    echo '<li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
                 <h6 class="my-0">Διανυκτερευσεις</h6>
-                <small class="text-muted">Απο '.$room['checkin'].' εως '.$room['checkout'].'</small>
+                <small class="text-muted">Απο ' . $room['checkin'] . ' εως ' . $room['checkout'] . '</small>
               </div>
-              <span class="text-muted">'.$room['numberofstays'].'</span>
+              <span class="text-muted">' . $room['numberofstays'] . '</span>
             </li>
             <li class="list-group-item d-flex justify-content-between">
               <span>Συνολο (EUR)</span>
-              <strong>'.$room['totalprice'].'€</strong>
+              <strong>' . $room['totalprice'] . '€</strong>
             </li>
           </ul>
         </div>
@@ -100,12 +100,12 @@ if ($result->num_rows > 0) {
                                 </div>
                             </div>
                             <hr class="mb-4">
-                            <button class="btn btn-primary btn-lg btn-block" type="submit" onclick="complete(\''.$room['roomid'].'\',\''.$_SESSION['id'].'\')" >Ολοκληρωση αγορας</button>
+                            <button class="btn btn-primary btn-lg btn-block" type="submit" onclick="complete(\'' . $room['roomid'] . '\',\'' . $_SESSION['id'] . '\')" >Ολοκληρωση αγορας</button>
                         </form>
                     </div>
                 </div>
             </div>';
 
-  }  
+  }
 }
 ?>

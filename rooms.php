@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="css/rooms.css">
-    <script src="js/rooms.js"></script>
 
-  </head>
-  <body class ="bg-light">
-    <!-- load the navbar menu -->
-    <?php include_once 'navbar.php';?>
-    <?php
-      echo '<div id="result"></div>';
-    ?>      
-<script>
-  $.get(
-        "http://localhost/Unipihotel/api/rooms/allRooms.php",
-        {
-           
-        },
-        function (response) {
-            var json = JSON.parse(response);
-            document.getElementById("result").outerHTML =  `<div class="rooms"><div class="container"><div class="row">`+
-          
-             (json.rooms.map(room => `   <div class="col-sm mt-3">
+<head>
+  <link rel="stylesheet" href="css/rooms.css">
+  <script src="js/rooms.js"></script>
+
+</head>
+
+<body class="bg-light">
+  <!-- load the navbar menu -->
+  <?php include_once 'navbar.php'; ?>
+  <?php
+  echo '<div id="result"></div>';
+  ?>
+  <script>
+    $.get(
+      "http://localhost/Unipihotel/api/rooms/allRooms.php",
+      {
+
+      },
+      function (response) {
+        var json = JSON.parse(response);
+        document.getElementById("result").outerHTML = `<div class="rooms"><div class="container"><div class="row">` +
+
+          (json.rooms.map(room => `   <div class="col-sm mt-3">
                                <div class="card bg-white text-dark">
                               <div class="card-body">
                                        <div class="imageclass">
@@ -37,13 +39,14 @@
                                     </div>	
                               </div>
                               </div>
-                          </div>`))+`</div></div></div>`;            
-        }
+                          </div>`)) + `</div></div></div>`;
+      }
     );
-</script>
-  <br/><br/><br/>  
+  </script>
+  <br /><br /><br />
   <!-- load the footer -->
-  <?php include_once 'footer.php';?>
+  <?php include_once 'footer.php'; ?>
 
-  </body>
+</body>
+
 </html>

@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="css/rooms.css">
-    <script src="js/rooms.js"></script>
 
-  </head>
-  <body class ="bg-light">
-    <!-- load the navbar menu -->
-    <?php include_once 'navbar.php';?>
-    <?php
-    $key = $_SERVER['QUERY_STRING'];
-    $new = str_replace('%20',' ', $key);
+<head>
+  <link rel="stylesheet" href="css/rooms.css">
+  <script src="js/rooms.js"></script>
 
-    echo '<div class="text-center">
+</head>
+
+<body class="bg-light">
+  <!-- load the navbar menu -->
+  <?php include_once 'navbar.php'; ?>
+  <?php
+  $key = $_SERVER['QUERY_STRING'];
+  $new = str_replace('%20', ' ', $key);
+
+  echo '<div class="text-center">
             <label>Αποτελέσματα για:</label>
-            <input id="text" type="text" class="font-weight-bold" value="'.$new.'" disabled style="border:0"></input>
+            <input id="text" type="text" class="font-weight-bold" value="' . $new . '" disabled style="border:0"></input>
           </div>
           ';
 
-    echo '<div id="result"></div>';
-?>      
-<script>
-  let text = $("#text").val();
-  $.get(
-        "http://localhost/Unipihotel/api/rooms/search.php",
-        {
-            roomname: text
-        },
-        function (response) {
-           
-            var json = JSON.parse(response);
-            document.getElementById("result").innerHTML =  `<div class="rooms"><div class="container"><div class="row">`+
-          
-             (json.rooms.map(room => `   <div class="col-sm mt-3">
+  echo '<div id="result"></div>';
+  ?>
+  <script>
+    let text = $("#text").val();
+    $.get(
+      "http://localhost/Unipihotel/api/rooms/search.php",
+      {
+        roomname: text
+      },
+      function (response) {
+
+        var json = JSON.parse(response);
+        document.getElementById("result").innerHTML = `<div class="rooms"><div class="container"><div class="row">` +
+
+          (json.rooms.map(room => `   <div class="col-sm mt-3">
                                <div class="card bg-white text-dark">
                               <div class="card-body">
                                        <div class="imageclass">
@@ -48,13 +50,14 @@
                                     </div>	
                               </div>
                               </div>
-                          </div>`))+`</div></div></div>`;            
-        }
+                          </div>`)) + `</div></div></div>`;
+      }
     );
-</script>
-  <br/><br/><br/>  
+  </script>
+  <br /><br /><br />
   <!-- load the footer -->
-  <?php include_once 'footer.php';?>
+  <?php include_once 'footer.php'; ?>
 
-  </body>
+</body>
+
 </html>

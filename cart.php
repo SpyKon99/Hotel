@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="css/index.css">
-    <script src="js/room.js"></script>
-  </head>
-  <body class ="bg-light">
-    <!-- load the navbar menu -->
-    <?php include_once 'navbar.php';?>
-  
-  
-   <!-- cart section -->
-<?php
-$roomId = $_SERVER['QUERY_STRING'];
-$roomid = substr($roomId,3);
-$userid = $_SESSION['id'];
-echo '<input id="userText" type="text" class="font-weight-bold" value="'.$userid.'" disabled style="display:none "></input>
-      <input id="roomText" type="text" class="font-weight-bold" value="'.$roomid.'" disabled style="display:none "></input>
-      <div id="cart"></div>';
-?>
 
-<script>
-        let user = $("#userText").val();
-        let room = $("#roomText").val();
-        // alert(user);
-        $.get(
-                "http://localhost/Unipihotel/api/bookings/cart.php",
-                {
-                  userid: user,
-                  roomid: room
-                },
-                function (response) {
-                  
-                  var json = JSON.parse(response);
-                  document.getElementById("cart").outerHTML =  `<div class="container" id="cart">
+<head>
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/room.js"></script>
+</head>
+
+<body class="bg-light">
+  <!-- load the navbar menu -->
+  <?php include_once 'navbar.php'; ?>
+
+
+  <!-- cart section -->
+  <?php
+  $roomId = $_SERVER['QUERY_STRING'];
+  $roomid = substr($roomId, 3);
+  $userid = $_SESSION['id'];
+  echo '<input id="userText" type="text" class="font-weight-bold" value="' . $userid . '" disabled style="display:none "></input>
+      <input id="roomText" type="text" class="font-weight-bold" value="' . $roomid . '" disabled style="display:none "></input>
+      <div id="cart"></div>';
+  ?>
+
+  <script>
+    let user = $("#userText").val();
+    let room = $("#roomText").val();
+    // alert(user);
+    $.get(
+      "http://localhost/Unipihotel/api/bookings/cart.php",
+      {
+        userid: user,
+        roomid: room
+      },
+      function (response) {
+
+        var json = JSON.parse(response);
+        document.getElementById("cart").outerHTML = `<div class="container" id="cart">
       <div class="py-5 text-center">
           <h2>Φορμα πληρωμης</h2>
       </div>
@@ -113,15 +115,16 @@ echo '<input id="userText" type="text" class="font-weight-bold" value="'.$userid
                 </div>
             </div>`;
 
-                }
-        );
+      }
+    );
 
-    </script>
+  </script>
 
 
 
   <!-- load the footer -->
-  <?php include_once 'footer.php';?>
+  <?php include_once 'footer.php'; ?>
 
-  </body>
+</body>
+
 </html>
