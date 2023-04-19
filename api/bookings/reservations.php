@@ -1,32 +1,32 @@
 <?php
- 
+
 // get database connection
 include_once '../config/database.php';
- 
+
 // instantiate book object
 include_once '../objects/book.php';
- 
+
 $database = new Database();
 $db = $database->getConnection();
- 
+
 $book = new Book($db);
- 
+
 // set ID property of user to be editeds
 $book->userid = isset($_GET['userid']) ? $_GET['userid'] : die();
 
 // read the details of user to be edited
 $stmt = $book->reservations();
 
-if($stmt->rowCount() > 0){
+if ($stmt->rowCount() > 0) {
     // create array
-    $reservations_arr=array(
+    $reservations_arr = array(
         "status" => true,
 
-       "reservations" => []
+        "reservations" => []
     );
 
     $reservations = [];
-    foreach($stmt as $result) {
+    foreach ($stmt as $result) {
         $reservations[] = [
             "id" => $result['id'],
             "userid" => $result['userid'],
@@ -40,9 +40,8 @@ if($stmt->rowCount() > 0){
     }
 
     $reservations_arr['reservations'] = $reservations;
-}
-else{
-    $reservations_arr=array(
+} else {
+    $reservations_arr = array(
         "status" => false,
         "message" => "Did not find something!"
     );

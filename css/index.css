@@ -1,18 +1,20 @@
-
 /* search area */
 #searchTag {
     font-family: fantasy;
-    text-decoration: none; 
-    color:#ff9900;
+    text-decoration: none;
+    color: #ff9900;
 }
+
 #searchTag a {
-    text-decoration: none; 
-    color:#ff9900;
+    text-decoration: none;
+    color: #ff9900;
 }
-#searchSection  {
-    width:50%; 
+
+#searchSection {
+    width: 50%;
     margin-left: 25%;
 }
+
 #searchSection button {
     background-color: #ff9900;
 }

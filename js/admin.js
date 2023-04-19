@@ -1,8 +1,8 @@
-function adminlogin(){
-								
+function adminlogin() {
+
     let username = $("#logusername").val();
     let password = $("#logpass").val();
-    
+
     $.get(
         "http://localhost/Unipihotel/api/users/adminlogin.php",
         {

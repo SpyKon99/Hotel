@@ -8,10 +8,10 @@ function book(id) {
         data: {
             roomId
         },
-        success: function(data) {
+        success: function (data) {
             window.location.href = "room.php?id=" + roomId;
         },
-        error: function(xhr, status, error) {
+        error: function (xhr, status, error) {
             console.error(xhr);
         }
 

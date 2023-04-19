@@ -2,11 +2,11 @@
 // include database and object files
 include_once '../config/database.php';
 include_once '../objects/room.php';
- 
+
 // get database connection
 $database = new Database();
 $db = $database->getConnection();
- 
+
 // prepare user object
 $room = new Room($db);
 
@@ -17,16 +17,16 @@ $room->roomname = isset($_GET['roomname']) ? $_GET['roomname'] : die();
 // read the details of user to be edited
 $stmt = $room->search();
 
-if($stmt->rowCount() > 0){
+if ($stmt->rowCount() > 0) {
     // create array
-    $room_arr=array(
+    $room_arr = array(
         "status" => true,
 
-       "rooms" => []
+        "rooms" => []
     );
 
     $rooms = [];
-    foreach($stmt as $result) {
+    foreach ($stmt as $result) {
         $rooms[] = [
             "id" => $result['id'],
             "room" => $result['roomName'],
@@ -38,9 +38,8 @@ if($stmt->rowCount() > 0){
     }
 
     $room_arr['rooms'] = $rooms;
-}
-else{
-    $room_arr=array(
+} else {
+    $room_arr = array(
         "status" => false,
         "message" => "Did not find something!",
     );

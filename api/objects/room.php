@@ -1,10 +1,11 @@
 <?php
-class Room{
- 
+class Room
+{
+
     // database connection and table name
     private $conn;
     private $table_name = "rooms";
- 
+
     // object properties
     public $id;
     public $roomname;
@@ -17,20 +18,22 @@ class Room{
     public $parking;
     public $wifi;
     public $created;
- 
+
     // constructor with $db as database connection
-    public function __construct($db){
+    public function __construct($db)
+    {
         $this->conn = $db;
     }
     //return specific room
-    function specificRoom(){
+    function specificRoom()
+    {
         // select all query
         $query = "SELECT
                     *
                 FROM
                     " . $this->table_name . "  
                 WHERE 
-                    id= '". $this->id . "' ";
+                    id= '" . $this->id . "' ";
 
         // prepare query statement
         $stmt = $this->conn->prepare($query);
@@ -40,7 +43,8 @@ class Room{
         return $stmt;
     }
     // return all rooms
-    function allRooms(){
+    function allRooms()
+    {
         // select all query
         $query = "SELECT
                     *
@@ -56,14 +60,15 @@ class Room{
     }
 
     // search room
-    function search(){
+    function search()
+    {
         // select all query
         $query = "SELECT
                     *
                 FROM
                     " . $this->table_name . " 
                 WHERE
-                    roomName LIKE '%' '".$this->roomname."' '%' ";
+                    roomName LIKE '%' '" . $this->roomname . "' '%' ";
 
         // prepare query statement
         $stmt = $this->conn->prepare($query);

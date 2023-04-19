@@ -1,17 +1,17 @@
 .rooms .container .row {
-    display:contents;
+    display: contents;
 }
 
 .card-body {
-    display:flex;
+    display: flex;
 }
 
 #room-name {
-    color:#0047b3;
+    color: #0047b3;
 }
 
 .room-info .btn-book {
-    background-color: #ff9900; 
+    background-color: #ff9900;
     width: 200px;
     height: 40px
 }

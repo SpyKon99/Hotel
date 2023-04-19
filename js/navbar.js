@@ -2,13 +2,12 @@ function matchPassword() {
     var alert = document.getElementById("alert").innerHTML = "";
     var pw1 = document.getElementById("registerInputPassword").value;
     var pw2 = document.getElementById("registerInputPasswordcheck").value;
-    
-    
-    if (pw1 != pw2)
-    {
+
+
+    if (pw1 != pw2) {
         var alert = document.getElementById("alert").innerHTML = "Οι κωδικοί δεν ταιρίαζουν.";
         var btn = document.getElementById("registerbtn").disabled = true;
-    }else {
+    } else {
         var btn = document.getElementById("registerbtn").disabled = false;
     }
 }
@@ -46,11 +45,11 @@ function signup() {
     );
 }
 
-function login(){
-								
+function login() {
+
     let username = $("#logusername").val();
     let password = $("#logpass").val();
-    
+
     $.get(
         "http://localhost/Unipihotel/api/users/login.php",
         {
@@ -63,6 +62,6 @@ function login(){
             location.reload();
         }
     );
-    
+
 }
 
