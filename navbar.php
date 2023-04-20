@@ -57,6 +57,40 @@ session_start();
 	}
 </script>
 
+<!-- ΝΕΟ ΔΙΟΡΘΩΜΕΝΟ NAVBAR - RESPONSIVE ΓΙΑ ΚΙΗΤΑ  -->
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+	<a class="navbar-brand" href="index.php">Navbar</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+		aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNavDropdown">
+		<ul class="navbar-nav"> -->
+<?php
+// if (!isset($_SESSION['loggedin'])) {
+// 	echo '<a class="nav-link" href="" data-toggle="modal" data-target="#exampleModal"><i class="bi bi-door-open"></i> Σύνδεση <span class="sr-only">(current)</span></a>';
+// 	echo '<a class="nav-link" href="" data-toggle="modal" data-target="#exampleModal2"><i class="bi bi-person-plus"></i> Γίνε μέλος <span class="sr-only">(current)</span></a>';
+// }
+?>
+<!-- <li class="nav-item">
+				<a class="nav-link" href="index.php"><i class="bi bi-shop"></i> Αρχική σελίδα <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="rooms.php"><i class="bi bi-shop"></i> Δωμάτια</a>
+			</li> -->
+<?php
+// if (isset($_SESSION['loggedin'])) {
+// 	echo '<li class="nav-item"><a class="nav-link" href="bookings.php"><i class="bi bi-file-bar-graph"></i> Ιστορικό Κρατήσεων</a></li>';
+// 	echo '<li class="nav-item"><a class="nav-link" href="logout.php"><i class="bi bi-door-closed"></i> Αποσύνδεση</a></li>';
+
+// }
+?>
+<!-- </ul>
+	</div>
+</nav> -->
+
+
+<!-- ΠΑΛΙΟ NAVBAR - ΠΡΕΠΕΙ ΝΑ ΑΛΑΧΘΕΙ ΜΕ ΤΟ ΠΑΡΑΠΑΝΩ  -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<div class="collapse navbar-collapse text-right" id="myNavbar">
 		<ul class="navbar-nav ml-auto flex-nowrap mt-4 mr-5">
@@ -79,7 +113,7 @@ session_start();
 			?>
 		</ul>
 	</div>
-</nav>
+</nav> 
 
 <!-- Log-in Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
