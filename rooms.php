@@ -7,7 +7,7 @@
 
 </head>
 
-<body class="bg-light">
+<body class="bg-light pt-5">
   <!-- load the navbar menu -->
   <?php include_once 'navbar.php'; ?>
   <?php

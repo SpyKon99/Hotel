@@ -17,7 +17,7 @@
     <title>Unipihotel.gr</title>
 </head>
 
-<body class="bg-light">
+<body class="bg-light pt-5">
 
     <?php include_once('adminNavbar.php') ?>
     <?php include_once('db_conn.php') ?>
