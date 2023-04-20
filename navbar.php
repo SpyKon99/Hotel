@@ -72,10 +72,10 @@ session_start();
 				echo '<a class="nav-link" href="" data-toggle="modal" data-target="#exampleModal2"><i class="bi bi-person-plus"></i> Γίνε μέλος <span class="sr-only">(current)</span></a>';
 			}
 			?>
-			<li class="nav-item">
+			<!-- <li class="nav-item">
 				<a class="nav-link" href="index.php"><i class="bi bi-shop"></i> Αρχική σελίδα <span
 						class="sr-only">(current)</span></a>
-			</li>
+			</li> -->
 			<li class="nav-item">
 				<a class="nav-link" href="rooms.php"><i class="bi bi-shop"></i> Δωμάτια</a>
 			</li>

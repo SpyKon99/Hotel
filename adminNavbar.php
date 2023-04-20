@@ -73,7 +73,7 @@ session_start();
 			?>
 			<?php
 			if (isset($_SESSION['loggedin'])) {
-				echo '<li class="nav-item"><a class="nav-link" href="admin.php"><i class="bi bi-shop"></i> Αρχική σελίδα <span class="sr-only">(current)</span></a></li>';
+				// echo '<li class="nav-item"><a class="nav-link" href="admin.php"><i class="bi bi-shop"></i> Αρχική σελίδα <span class="sr-only">(current)</span></a></li>';
 				
 				echo '<li class="nav-item"><a class="nav-link" href="users.php"><i class="bi bi-people"></i> Χρήστες</a></li>';
 				echo '<li class="nav-item"><a class="nav-link" href="adminRooms.php"><i class="bi bi-shop"></i> Δωμάτια</a></li>';
