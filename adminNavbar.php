@@ -57,28 +57,59 @@ session_start();
 	}
 </script>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	<div class="collapse navbar-collapse text-right" id="myNavbar">
-		<ul class="navbar-nav ml-auto flex-nowrap mt-4 mr-5">
+<!-- ΝΕΟ ΔΙΟΡΘΩΜΕΝΟ NAVBAR - RESPONSIVE ΓΙΑ ΚΙΝΗΤΑ  -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+	<a class="navbar-brand" href="index.php">Admin Hotel <i class="bi bi-code-slash"></i></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+		aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNavDropdown">
+		<ul class="navbar-nav">
 			<?php
 			if (!isset($_SESSION['loggedin'])) {
-				echo '<li class="nav-item"><a href="" class="nav-link menu-item border-right mr-2" data-toggle="modal" data-target="#adminModal" ><i class="bi bi-door-open"></i> Σύνδεση</a></li>';
+				echo '<a class="nav-link" href="" data-toggle="modal" data-target="#adminModal"><i class="bi bi-door-open"></i> Σύνδεση <span class="sr-only">(current)</span></a>';
 			}
 			?>
 			<?php
 			if (isset($_SESSION['loggedin'])) {
-				echo '<li class="nav-item"><a href="admin.php" class="nav-link menu-item border-right mr-2"><i class="bi bi-shop"></i> Αρχική σελίδα</a></li>';
+				echo '<li class="nav-item"><a class="nav-link" href="admin.php"><i class="bi bi-shop"></i> Αρχική σελίδα <span class="sr-only">(current)</span></a></li>';
+				
+				echo '<li class="nav-item"><a class="nav-link" href="users.php"><i class="bi bi-people"></i> Χρήστες</a></li>';
+				echo '<li class="nav-item"><a class="nav-link" href="adminRooms.php"><i class="bi bi-shop"></i> Δωμάτια</a></li>';
+				echo '<li class="nav-item"><a class="nav-link" href="adminBookings.php"><i class="bi bi-file-bar-graph"></i> Κρατήσεις</a></li>';
+				
+				echo '<li class="nav-item"><a class="nav-link" href="adminlogout.php"><i class="bi bi-door-closed"></i> Αποσύνδεση</a></li>';
 
-				echo '<li class="nav-item"><a href="users.php" class="nav-link menu-item border-right mr-2"><i class="bi bi-people"></i> Χρήστες</a></li>';
-				echo '<li class="nav-item"><a href="adminRooms.php" class="nav-link menu-item border-right mr-2"><i class="bi bi-shop"></i> Δωμάτια</a></li>';
-				echo '<li class="nav-item"><a href="adminBookings.php" class="nav-link menu-item border-right mr-2"><i class="bi bi-file-bar-graph"></i> Κρατήσεις</a></li>';
-
-				echo '<li class="nav-item"><a href="adminlogout.php" class="nav-link menu-item border-right mr-2"><i class="bi bi-door-closed"></i> Αποσύνδεση</a></li>';
 			}
 			?>
 		</ul>
 	</div>
 </nav>
+
+<!-- ΠΑΛΙΟ NAVBAR - ΠΡΕΠΕΙ ΝΑ ΑΛΑΧΘΕΙ ΜΕ ΤΟ ΠΑΡΑΠΑΝΩ  -->
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div class="collapse navbar-collapse text-right" id="myNavbar">
+		<ul class="navbar-nav ml-auto flex-nowrap mt-4 mr-5"> -->
+			<?php
+			// if (!isset($_SESSION['loggedin'])) {
+			// 	echo '<li class="nav-item"><a href="" class="nav-link menu-item border-right mr-2" data-toggle="modal" data-target="#adminModal" ><i class="bi bi-door-open"></i> Σύνδεση</a></li>';
+			// }
+			?>
+			<?php
+			// if (isset($_SESSION['loggedin'])) {
+			// 	echo '<li class="nav-item"><a href="admin.php" class="nav-link menu-item border-right mr-2"><i class="bi bi-shop"></i> Αρχική σελίδα</a></li>';
+
+			// 	echo '<li class="nav-item"><a href="users.php" class="nav-link menu-item border-right mr-2"><i class="bi bi-people"></i> Χρήστες</a></li>';
+			// 	echo '<li class="nav-item"><a href="adminRooms.php" class="nav-link menu-item border-right mr-2"><i class="bi bi-shop"></i> Δωμάτια</a></li>';
+			// 	echo '<li class="nav-item"><a href="adminBookings.php" class="nav-link menu-item border-right mr-2"><i class="bi bi-file-bar-graph"></i> Κρατήσεις</a></li>';
+
+			// 	echo '<li class="nav-item"><a href="adminlogout.php" class="nav-link menu-item border-right mr-2"><i class="bi bi-door-closed"></i> Αποσύνδεση</a></li>';
+			// }
+			?>
+		<!-- </ul>
+	</div>
+</nav> -->
 
 <!-- Log-in Modal -->
 <div class="modal fade" id="adminModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
