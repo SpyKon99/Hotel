@@ -17,7 +17,7 @@
     <title>Unipihotel.gr</title>
 </head>
 
-<body class="bg-light">
+<body class="bg-light pt-5">
 
     <?php include_once('adminNavbar.php') ?>
 
@@ -34,7 +34,7 @@
 
     if ($result->num_rows > 0) {
         while ($document = $result->fetch_assoc()) {
-            echo '<form action="FinalEditUser.php" method="POST"style="padding-right:30%; padding-left:30%;">
+            echo '<form action="FinalEditUser.php" method="POST"style="padding-right:30%; padding-left:30%; padding-top:20px;">
                 <div class="form-group">								
                     <input type="text" class="form-control" name="userid" id="userid" value="' . $document['id'] . '" readonly> 
                 </div>

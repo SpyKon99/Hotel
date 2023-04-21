@@ -17,7 +17,7 @@
 	<title>Unipihotel.gr</title>
 </head>
 
-<body class="bg-light">
+<body class="bg-light pt-5">
 
 	<?php include_once('adminNavbar.php') ?>
 	<br />
@@ -84,7 +84,7 @@
 								</select>							
 							</div>						
 							<div class="text-center">
-								<button required type="submit" class="btn  btn-block text-white" id="createbtn" style="background-color: #ff9900;">Δημιουργία</button>							
+								<button required type="submit" class="btn  btn-block text-white" id="createbtn" style="background-color: #ff9900;">Edit</button>							
 							</div>	
 						</form>';
 		}
